@@ -18,13 +18,13 @@ else modo=1
 fi
 
 
-for file in *.*      			# per ogni file nella cartella corrente
+for file in *.*		 			# per ogni file nella cartella corrente
 do
 	#echo "${file##*/}"      	# mostra tutto il nome file
 	#echo "${file##*.}"      	# mostra l'ultima estensione
 	filename="${file##*/}"		# salva il nome file senza estensione
 	filext="${file##*.}"
-	filebase="$(basename $file .$filext)"		# solo nome file senza estensione
+	filebase="$(basename "$file" .$filext)"		# solo nome file senza estensione
 	#echo "$filebase"
 
 	if [ ! -d analisi/$filext ]
@@ -34,10 +34,10 @@ do
 
 	if [ $modo -eq 0 ]
 	then
-		cp $file analisi/$filext
+		cp "$file" analisi/$filext
 	elif [ $modo -eq 1 ]
 	then
-		mv $file analisi/$filext
+		mv "$file" analisi/$filext
 	else
 		echo "Errore!"
 	fi
