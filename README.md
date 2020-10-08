@@ -1,2 +1,2 @@
 # manfile
-riordina files per esetensione in cartelle
+riordina files per estensione in cartelle
